@@ -1,0 +1,43 @@
+<!-- The ng-app directive tells AngularJS that this is the root element of the AngularJS application.-->
+<!-- Example-->
+<body ng-app="">
+<p>My first expression: {{ 5 + 5 }}</p>
+</body>
+
+<!--  ng-show: Is used to show a component in a screen, if a values evaluets to true. If not, the element is hidden. -->
+<!-- Syntax-->
+<element ng-show="expression"></element>
+
+<!-- Example-->
+<input type="checkbox" ng-model="myVar">
+<div ng-show="myVar">
+<h1>Welcome</h1>
+<p>Welcome to my home.</p>
+</div>
+
+
+
+<!-- ng-hide: The ng-hide directive hides the HTML element if the expression evaluates to true.-->
+<!-- Example-->
+<input type="checkbox" ng-model="myVar">
+<div ng-hide="myVar">
+<h1>Welcome</h1>
+<p>Welcome to my home.</p>
+</div>
+
+
+<!--The ng-if directive removes the HTML element if the expression evaluates to false.-->
+<!--If the if statement evaluates to true, a copy of the Element is added in the DOM.-->
+<!-- Example-->
+<input type="checkbox" ng-model="myVar" ng-init="myVar = true">
+<div ng-if="myVar">
+<h1>Welcome</h1>
+<p>Welcome to my home.</p>
+<hr>
+</div>
+
+
+
+
+
+
