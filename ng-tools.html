@@ -1,4 +1,7 @@
-<!-- The ng-app directive tells AngularJS that this is the root element of the AngularJS application.-->
+<!-- This file have some declarative of ng functions-->
+
+
+<!-- ng-app: directive tells AngularJS that this is the root element of the AngularJS application.-->
 <!-- Example-->
 <body ng-app="">
 <p>My first expression: {{ 5 + 5 }}</p>
@@ -7,7 +10,6 @@
 <!--  ng-show: Is used to show a component in a screen, if a values evaluets to true. If not, the element is hidden. -->
 <!-- Syntax-->
 <element ng-show="expression"></element>
-
 <!-- Example-->
 <input type="checkbox" ng-model="myVar">
 <div ng-show="myVar">
@@ -17,7 +19,7 @@
 
 
 
-<!-- ng-hide: The ng-hide directive hides the HTML element if the expression evaluates to true.-->
+<!-- ng-hide: hides the HTML element if the expression evaluates to true.-->
 <!-- Example-->
 <input type="checkbox" ng-model="myVar">
 <div ng-hide="myVar">
@@ -26,7 +28,7 @@
 </div>
 
 
-<!--The ng-if directive removes the HTML element if the expression evaluates to false.-->
+<!--ng-if: removes the HTML element if the expression evaluates to false.-->
 <!--If the if statement evaluates to true, a copy of the Element is added in the DOM.-->
 <!-- Example-->
 <input type="checkbox" ng-model="myVar" ng-init="myVar = true">
@@ -37,7 +39,42 @@
 </div>
 
 
+<!--ng-require:sets the required attribute of a form field (input or textarea)..-->
+<!--The form field will be required if the expression inside the ng-required attribute returns true..-->
+<!-- Syntax-->
+<input ng-required="expression"></input>
+<!-- Example-->
+<input type="checkbox" ng-model="myVar">
+<input name="myInput" ng-model="myInput" ng-required="myVar">
 
 
+<!--ng-change: tells AngularJS what to do when the value of an HTML element changes...-->
+<!--The form field will be required if the expression inside the ng-required attribute returns true..-->
+<!-- Syntax-->
+<element ng-change="expression"></element>
+<!-- Example-->
+<body ng-app="myApp">
+
+    <div ng-controller="myCtrl">
+        <input type="text" ng-change="myFunc()" ng-model="myValue" />
+        <p>The input field has changed {{count}} times.</p>
+    </div>
+    
+    <script>
+    angular.module('myApp', [])
+    .controller('myCtrl', ['$scope', function($scope) {
+        $scope.count = 0;
+        $scope.myFunc = function() {
+            $scope.count++;
+        };
+    }]);
+    </script>
+    
+    </body>
 
 
+<!--ng-click: tells AngularJS what to do when an HTML element is clicked....-->
+<!-- Syntax-->
+<element ng-click="expression"></element>
+<!-- Example-->
+<button ng-click="count = count + 1" ng-init="count=0">OK</button>
